@@ -1,0 +1,35 @@
+
+# Directores
+
+INCLUDE_DIRS = ./src \
+	       ./external/ \
+	       ./external/printf
+
+MSP430_GCC_BIN = /home/gauravgupta/Downloads/msp430-gcc-9.3.1.11_linux64/bin
+
+# Toolchain
+
+CPPCHECK = cppcheck
+CC = $(MSP430_GCC_BIN)/msp430-elf-gcc
+
+# Files
+
+SOURCES = src/main.c
+
+
+
+
+
+
+# Phonies
+
+blink: main.c
+	$(CC) main.c
+
+.PHONY: cppcheck
+
+cppcheck:
+	$(CPPCHECK) --quiet --enable=all --error-exitcode=1 \
+		-I $(INCLUDE_DIRS) \
+		$(SOURCES) \
+		-i external/printf
