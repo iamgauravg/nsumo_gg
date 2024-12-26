@@ -8,7 +8,7 @@ DEBUG = LD_LIBRARY_PATH=/home/gauravgupta/ti/ccs1281/ccs/ccs_base/DebugServer/dr
 ######################################################################
 # Flags
 ######################################################################
-CFLAGS = -mmcu=msp430fr2355 $(addprefix -I ,$(INCLUDE_DIRS))
+CFLAGS = -mmcu=msp430fr2355 $(addprefix -I ,$(INCLUDE_DIRS)) -g3 -ggdb -gdwarf-2
 LDFLAGS = -mmcu=msp430fr2355 $(addprefix -L ,$(LIB_DIRS))
 
 ######################################################################
